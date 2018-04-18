@@ -15,70 +15,35 @@ local iterationTextField = native.newTextField( display.contentCenterX, display.
 iterationTextField.id = "iteration TextField"
 
 local function enterButtonTouch( event )
+
     
+
     if ( event.phase == "began" ) then
+
         print("start")
+
     elseif ( event.phase == "ended" ) then
+
         answer = 0
-	    iteration = iterationTextField.text 
-	    iterationtonumber = tonumber (iteration)
+        iteration = iterationTextField.text 
+        iterationtonumber = tonumber (iteration)
 
-	    if iterationtonumber > 0 then
+        if iterationtonumber > 0 then
 
-	    	for counter = 0,iterationtonumber -1 do 
-	    		answer = answer - ((-1^counter) / (2 * counter + 1))
-	    		answer = answer * 4
-	    		print(answer)
-	    	end
-	    	
-	    	else
-	    	print("error")
-	    end
-
-     return true
-	
-	end
+        	for counter = 0,iterationtonumber-1 do 
+        		answer = answer + (((-1)^counter) / (2 * counter + 1))
+        		
+        	end
+        	print(answer * 4)
+        else
+        	print("error")
+        end
+        
+        return true
+    end
 end
 
+
+
 enterButton:addEventListener( "touch", enterButtonTouch )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
 
