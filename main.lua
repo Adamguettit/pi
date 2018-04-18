@@ -14,6 +14,8 @@ local iteration
 local iterationTextField = native.newTextField( display.contentCenterX, display.contentCenterY , 450, 150 )
 iterationTextField.id = "iteration TextField"
 
+display.newText("Enter a number of how many iterations you want to happen for pi", 1024, 500, native.systemFont, 70)
+
 local function enterButtonTouch( event )
 
     
@@ -34,9 +36,9 @@ local function enterButtonTouch( event )
         		answer = answer + (((-1)^counter) / (2 * counter + 1))
         		
         	end
-        	print(answer * 4)
+        	display.newText(answer * 4, 1024, 1200, native.systemFont, 100)
         else
-        	print("error")
+        	display.newText("make sure you wrote a positive real number", 1024, 1200, native.systemFont, 60)
         end
         
         return true
