@@ -28,11 +28,11 @@ local function enterButtonTouch( event )
 
         answer = 0
         iteration = iterationTextField.text 
-        iterationtonumber = tonumber (iteration)
+        iterationToNumber = tonumber (iteration)
 
-        if iterationtonumber > 0 then
+        if iterationToNumber > 0 then
 
-        	for counter = 0,iterationtonumber-1 do 
+        	for counter = 0,iterationToNumber-1 do 
         		answer = answer + (((-1)^counter) / (2 * counter + 1))
         		
         	end
